@@ -19,9 +19,7 @@ services:
 
   redis:
     image: redis:7.0.4
-    command: redis-server /etc/redis/redis.conf
-    volumes:
-      - ./redis.conf:/etc/redis/redis.conf
+    command: ["redis-server", "--requirepass", "${REDIS_PASSWORD}"]
     container_name: redis-container
     hostname: redis_standalone
     labels:

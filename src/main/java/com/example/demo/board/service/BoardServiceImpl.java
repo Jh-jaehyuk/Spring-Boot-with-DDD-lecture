@@ -31,22 +31,6 @@ public class BoardServiceImpl implements BoardService {
     final private AccountRepository accountRepository;
     final private AccountProfileRepository accountProfileRepository;
 
-//    @Override
-//    public ListBoardResponse list(ListBoardRequest request) {
-//        // PageRequest 생성 (0부터 시작하는 페이지 인덱스를 위해 page - 1을 사용)
-//        PageRequest pageRequest = PageRequest.of(request.getPage() - 1, request.getPerPage());
-//
-//        // 페이징된 게시글 목록을 가져오기
-//        Page<Board> boardPage = boardRepository.findAllWithWriter(pageRequest);
-//
-//        // 페이지네이션된 게시글을 ListBoardResponse로 변환
-//        List<ListBoardResponse> boardList = boardPage.getContent().stream()
-//                .map(ListBoardResponse::from)  // ListBoardResponse로 변환
-//                .toList();
-//
-//        return boardList;
-//    }
-
     @Override
     public ListBoardResponse list(ListBoardRequest request) {
         // PageRequest 생성 (0부터 시작하는 페이지 인덱스를 위해 page - 1을 사용)
