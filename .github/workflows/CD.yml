@@ -5,8 +5,8 @@ on:
     branches:
       - main
 
-env:
-  DOCKER_IMAGE: ghcr.io/${{ github.actor }}/spring-backend:latest
+# env:
+#   DOCKER_IMAGE: ghcr.io/${{ github.actor }}/spring-backend:latest
 
 jobs:
   build:
@@ -20,6 +20,12 @@ jobs:
         with:
           java-version: '17'
           distribution: 'zulu' # https://github.com/actions/setup-java
+
+      - name: set lower case owner name
+        run: |
+          echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
+        env:
+          OWNER: '${{ github.repository_owner }}'
         
       - name: Create application.yaml for CD Deploy
         run: |
