@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  DOCKER_IMAGE: ghcr.io/${{ secrets.REAL_ACTOR }}/spring-backend:latest
+  DOCKER_IMAGE: ghcr.io/${{ secrets.REAL_ACTOR }}/spring-backend
   
 jobs:
   build:
